@@ -34,3 +34,7 @@ class Veiculos:
         """
         self.__valor_fipe = valor 
         return True
+
+    def calcular_consumo(self, distancia: float) -> float:
+        consumo = distancia/12
+        print("O consumo desse carro é de:",consumo,"litros de gasolina.") 
