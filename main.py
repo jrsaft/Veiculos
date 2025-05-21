@@ -3,6 +3,7 @@ from models.CarrosCombustao import CarrosCombustao
 from models.CarroEletrico import CarroEletrico
 from models.CarroConvEletr import CarroConvEletr
 from models.moto import moto
+from models.Frota import Frota
 
 Lista_frota = [] # Criando a lista.
 
@@ -28,4 +29,5 @@ unomile = CarrosCombustao("HY5N76M", "Uno Mille", "Fiat", 2004, "Branco", 10000,
 dist = float(input("Qual foi a distância que você percorreu? "))
 hornet.calcular_consumo(dist)
 unomile.calcular_consumo(dist)
+
 
