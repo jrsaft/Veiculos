@@ -38,3 +38,11 @@ class Veiculos:
     def calcular_consumo(self, distancia: float) -> float:
         consumo = distancia/12
         print("O consumo desse carro é de:",consumo,"litros de gasolina.") 
+
+    def __eq__(self, other):
+        if self.__placa == other.getPlaca():
+            print("O mesmo veículo!")
+            return True
+        else:
+            print("Não é o mesmo veículo!")
+            return False

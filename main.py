@@ -4,6 +4,7 @@ from models.CarroEletrico import CarroEletrico
 from models.CarroConvEletr import CarroConvEletr
 from models.moto import moto
 from models.Frota import Frota
+from utils.errus import *
 
 Lista_frota = [] # Criando a lista.
 
@@ -26,7 +27,25 @@ hornet = moto("YH56MN8","Hornet", "Honda", 2018, "Preta", 25000)
 
 unomile = CarrosCombustao("HY5N76M", "Uno Mille", "Fiat", 2004, "Branco", 10000, "gasolina", 4, 5, 70, 5, 80)
 
-dist = float(input("Qual foi a distância que você percorreu? "))
+try:
+    distancia = float(input("Qual foi a distância que você percorreu? "))
+    if distancia > 0:
+        unomile.calcular_consumo(distancia)
+    elif distancia < 0:
+        raise DistanciaNegativa("Distância negativa não é permitida!")
+except ValueError as erro:
+    print(f"Erro: {erro}")
+except DistanciaNegativa as erro:
+    print(f"Erro:{erro}")
+
+recarga = float(input("Qual seria a recarga desejada para seu veículo?"))
+tesla_model.recarregar(recarga)
+
+novoplaca = str(input("Qual a nova placa que deseja alterar?"))
+unomile.set_placa(novoplaca)
+
+print(voyage == voyage)
+
 hornet.calcular_consumo(dist)
 unomile.calcular_consumo(dist)
 

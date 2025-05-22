@@ -44,3 +44,23 @@ class CarrosCombustao(Veiculos):
             self.__nivel_combustivel = novo_percentual
             return True
 
+    def getPlaca(self) -> str:
+        return self.__placa
+    
+    def set_placa(self, novoplaca: str) -> bool:
+        if novoplaca[:3].isalpha:
+            if novoplaca[3].isnumeric:
+                if novoplaca[4].isalpha:
+                    if novoplaca[5:].isnumeric:
+                        print("Placa válida! Alterado!")
+                        self.__placa = novoplaca
+                    else:
+                        print("Placa inválida!")
+                else:
+                    print("Placa inválida!")
+            else:
+                print("Placa inválida!")
+        else:
+            print("Placa inválida!")
+        
+    

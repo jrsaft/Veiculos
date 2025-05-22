@@ -1,3 +1,4 @@
+from typing import Self
 from .Veiculos import Veiculos
 
 class CarroEletrico(Veiculos):
@@ -23,3 +24,22 @@ class CarroEletrico(Veiculos):
         infos += f"Tipo de bateria: {self.__tipo_bateria}\n"
         infos += f"Autonomia: {self.__autonomia}\n"
         return infos
+    
+    def calcular_consumo(self, distancia):
+        if distancia > 0:
+            consumo = distancia * 0,15
+            print("O consumo deste veículo elétrico é de:",consumo,"kWh de energia.")
+        if distancia < 0:
+            raise DistanciaNegativa("Distância inválida!")
+        else:
+            print("Sem distância percorrida, sem consumo.")
+
+    def recarregar(self, recarga):
+        if self.__nivel_bateria == 100:
+            print("Bateria carregada!")
+        if self.__nivel_bateria + recarga >= 100:
+            print("Carregado! O nivel de bateria é: 100%")
+        else:
+            self.__nivel_bateria + recarga < 100
+            novo = self.__nivel_bateria + recarga
+            print("Carregado! O nivel de bateria é:", novo,"%") 

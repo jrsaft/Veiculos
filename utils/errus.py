@@ -1,0 +1,2 @@
+class DistanciaNegativa(Exception):
+    pass
